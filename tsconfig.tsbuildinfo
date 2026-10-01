@@ -1,0 +1,1 @@
+{"root":["./src/app.tsx","./src/main.tsx","./src/components/folder.tsx","./src/data/questions.ts","./src/lib/firebase.ts","./src/pages/studentdashboard.tsx","./src/pages/studentlogin.tsx"],"errors":true,"version":"6.0.3"}

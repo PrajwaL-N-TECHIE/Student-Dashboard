@@ -245,7 +245,7 @@ const Dropzone = ({ assignments, student, submissions, setSubmissions }: { assig
       if (!res.ok) throw new Error(data.error?.message || "Upload failed");
       const newSub = { assignment_id: selectedAssignId, student_id: student.id, student_name: student.name, cohort: student.cohort, file_url: data.secure_url, status: 'pending' as const, submitted_at: serverTimestamp() };
       await addDoc(collection(db, "submissions"), newSub);
-      setSubmissions(prev => [...prev, newSub as Submission]);
+      setSubmissions(prev => [...prev, newSub as unknown as Submission]);
       setFile(null); setSelectedAssignId("");
       alert("Assignment submitted successfully!");
     } catch (err) { console.error(err); alert("Upload failed."); }
